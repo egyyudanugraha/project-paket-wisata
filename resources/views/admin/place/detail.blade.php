@@ -1,0 +1,42 @@
+@extends('layouts.main')
+@section('title', 'Detail Wisata')
+
+@section('head')
+<link rel="stylesheet" href="{{ asset('assets/vendors/simple-datatables/style.css') }}">
+@endsection
+
+@section('subtitle')
+  <p class="text-subtitle text-muted">@yield('title')</p>
+@endsection
+
+@section('content')
+<div class="card">
+  <div class="card-header">
+      <table class="table mb-0 table-lg">
+            <tbody>
+                <tr>
+                    <th class="text-bold-500" style="width: 200px;">Nama Wisata</th>
+                    <td>: {{$wisata[0]->nama}}</td>
+                </tr>
+                <tr>
+                    <th class="text-bold-500" style="width: 200px;">Tersedia di paket</th>
+                    <td>: {{$paket[0]->nama}}</td>
+                </tr>
+                <tr>
+                    <th class="text-bold-500" style="width: 200px;">Deskripsi</th>
+                    <td>: {{$wisata[0]->deskripsi}}</td>
+                </tr>
+            </tbody>
+        </table>
+  </div>
+</div>
+@endsection
+
+@section('utils')
+<script src="{{ asset('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
+<!-- <script>
+    // Simple Datatable
+    let table1 = document.querySelector('#table1');
+    let dataTable = new simpleDatatables.DataTable(table1);
+</script> -->
+@endsection

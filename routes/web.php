@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\PaketController;
-use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\AdminPaketController;
+use App\Http\Controllers\AdminPlaceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +20,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::resource('/paket', PaketController::class);
-Route::resource('/place', PlaceController::class);
+Route::resource('/admin/paket', AdminPaketController::class);
+Route::resource('/admin/place', AdminPlaceController::class);
