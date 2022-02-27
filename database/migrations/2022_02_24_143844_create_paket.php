@@ -17,6 +17,7 @@ class CreatePaket extends Migration
             $table->id();
             $table->string('nama');
             $table->integer('harga');
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }

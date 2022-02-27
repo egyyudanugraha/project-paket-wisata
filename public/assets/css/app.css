@@ -51,7 +51,9 @@
 .alert .alert-heading + p {
     margin-left: 0.4rem;
 }
-
+.dropdown .avatar {
+    margin-right: 0.6rem;
+}
 .alert-primary {
     background-color: #435ebe;
     color: #fff;
@@ -171,8 +173,8 @@
     height: 1rem;
 }
 .avatar img {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }
 .avatar .avatar-status {
@@ -1039,7 +1041,7 @@
 
 .layout-horizontal .header-top {
     background-color: white;
-    padding: 1.5rem;
+    padding: 1rem;
 }
 .layout-horizontal .header-top .container {
     display: flex;

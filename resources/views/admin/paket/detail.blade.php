@@ -22,6 +22,10 @@
                     <th class="text-bold-500" style="width: 200px;">Harga</th>
                     <td>: {{rupiah($paket[0]->harga)}}</td>
                 </tr>
+                <tr>
+                    <th class="text-bold-500" style="width: 200px;">Deskripsi</th>
+                    <td>: {{$paket[0]->deskripsi}}</td>
+                </tr>
             </tbody>
         </table>
   </div>
@@ -39,7 +43,7 @@
               @foreach($paket[0]->places as $i)
               <tr>
                   <td class="text-center">{{ $no++ }}</td>
-                  <td><a href="#">{{ $i->nama }}</a></td>
+                  <td><a href="{{ route('place.show', $i->id) }}">{{ $i->nama }}</a></td>
                   <td>{{ $i->deskripsi }}</td>
               </tr>
               @endforeach

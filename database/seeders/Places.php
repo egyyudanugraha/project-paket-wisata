@@ -17,10 +17,11 @@ class Places extends Seeder
     {
         //
         $faker = Faker::create('id_ID');
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i < 1000; $i++) { 
             DB::table('places')->insert([
                 'nama' => $faker->city(),
                 'deskripsi' => $faker->address(),
+                'paket_id' => $faker->numberBetween($min = 1, $max = 20),
                 'created_at' => $faker->dateTime($max = 'now', $timezone = null),
                 'updated_at' => $faker->dateTime($max = 'now', $timezone = null),
             ]);

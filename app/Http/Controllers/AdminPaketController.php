@@ -41,13 +41,15 @@ class AdminPaketController extends Controller
         
         $this->validate($request, [
             'nama' => 'required',
-            'harga' => 'required'
+            'harga' => 'required',
+            'deskripsi' => 'required'
         ]);
         try{
             // $paket = Paket::create($request->all());
             $paket = new Paket;
             $paket->nama = $request->nama;
             $paket->harga = intval($request->harga);
+            $paket->deskripsi = $request->deskripsi;
             $paket->save();
 
             if($paket){
@@ -108,7 +110,8 @@ class AdminPaketController extends Controller
         //
         $this->validate($request, [
             'nama' => 'required',
-            'harga' => 'required'
+            'harga' => 'required',
+            'deskripsi' => 'required'
         ]);
         
         try{
@@ -116,6 +119,7 @@ class AdminPaketController extends Controller
             $paket = Paket::where('id', $id)->firstOrFail();
             $paket->nama = $request->nama;
             $paket->harga = intval($request->harga);
+            $paket->deskripsi = $request->deskripsi;
             $paket->update();
             
             if($paket){

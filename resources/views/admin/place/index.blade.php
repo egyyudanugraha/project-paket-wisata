@@ -172,13 +172,13 @@
 
     $('table').on('click', '#deleteProd', function(e){
         Swal.fire({
-          title: 'Are you sure?',
-          html: `Are you sure to delete wisata <b>${e.currentTarget.parentNode.getAttribute("data-name")}</b>?`,
+          title: 'Yakin?',
+          html: `Apakah kamu yakin akan menghapus wisata <b>${e.currentTarget.parentNode.getAttribute("data-name")}</b>?`,
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete wisata!'
+          confirmButtonText: 'Yes, hapus wisata!'
         }).then((result) => {
           if (result.isConfirmed) {
             e.currentTarget.parentNode.submit()

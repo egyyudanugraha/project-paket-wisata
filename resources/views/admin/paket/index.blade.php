@@ -81,6 +81,12 @@
                   <div class="col-md-8 form-group">
                     <input type="number" name="harga" class="form-control" placeholder="Harga" autocomplete="off" required/>
                   </div>
+                  <div class="col-md-4">
+                    <label>Deskripsi</label>
+                  </div>
+                  <div class="col-md-8 form-group">
+                    <textarea style="resize: none;" rows="5" name="deskripsi" class="form-control" placeholder="Deskripsi paket" autocomplete="off" required ></textarea>
+                  </div>
                 </div>
               </div>
             </div>
@@ -127,6 +133,12 @@
                 <div class="col-md-8 form-group">
                   <input type="number" id="editHargaPaket" name="harga" class="form-control" placeholder="Harga" autocomplete="off" required/>
                 </div>
+                <div class="col-md-4">
+                  <label>Deskripsi</label>
+                </div>
+                <div class="col-md-8 form-group">
+                  <textarea style="resize: none;" id="editDeskripsi" rows="5" name="deskripsi" class="form-control" placeholder="Deskripsi paket" autocomplete="off" required ></textarea>
+                </div>
               </div>
             </div>
           </div>
@@ -158,13 +170,13 @@
 
     $('table').on('click', '#deleteProd', function(e){
         Swal.fire({
-          title: 'Are you sure?',
-          html: `Are you sure to delete paket <b>${e.currentTarget.parentNode.getAttribute("data-name")}</b>?`,
+          title: 'Yakin?',
+          html: `Apakah anda yakin akan menghapus paket <b>${e.currentTarget.parentNode.getAttribute("data-name")}</b>?`,
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete paket!'
+          confirmButtonText: 'Yes, hapus paket!'
         }).then((result) => {
           if (result.isConfirmed) {
             e.currentTarget.parentNode.submit()
@@ -180,6 +192,7 @@
       $("#formEditPaket").attr('action', 'http://127.0.0.1:8000/admin/paket/' + id)
         $('#editNamaPaket').val(data[0].nama)//.prop('disabled', true);
         $('#editHargaPaket').val(data[0].harga);
+        $('#editDeskripsi').val(data[0].deskripsi);
     })
 
   });

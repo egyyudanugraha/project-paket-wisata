@@ -14,4 +14,9 @@ class Paket extends Model
     {
         return $this->hasMany(Place::class);
     }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
 }

@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <th class="text-bold-500" style="width: 200px;">Tersedia di paket</th>
-                    <td>: {{$paket[0]->nama}}</td>
+                    <td>: <a href="{{ route('paket.show', $wisata[0]->pakets->id) }}">{{$wisata[0]->pakets->nama}}</a></td>
                 </tr>
                 <tr>
                     <th class="text-bold-500" style="width: 200px;">Deskripsi</th>

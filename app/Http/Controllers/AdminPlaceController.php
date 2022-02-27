@@ -82,13 +82,11 @@ class AdminPlaceController extends Controller
     public function show($id)
     {
         //
-        $wisata = Place::where('id', $id)->get();
-        $paket = Paket::where('id', $wisata[0]->paket_id)->get();
+        $wisata = Place::with('pakets')->where('id', $id)->get();
         // return response()->json([
-        //     'place' => $wisata, 
-        //     'paket' => $paket
+        //     'place' => $wisata
         // ]);
-        return view('admin.place.detail', compact('wisata', 'paket'));
+        return view('admin.place.detail', compact('wisata'));
     }
 
     /**
