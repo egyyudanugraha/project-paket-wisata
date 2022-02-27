@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Place extends Model
+class Invoice extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama', 'deskripsi'];
+    protected $fillable = ['inv_name', 'total', 'user_id', 'paket_id'];
 
     public function pakets()
     {
